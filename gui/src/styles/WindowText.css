@@ -1,0 +1,9 @@
+.Window {
+    width: 400px;
+    height: 300px;
+    background: #eae9e9;
+
+    border-radius: 20px;
+    box-shadow: 2px 2px;
+
+}

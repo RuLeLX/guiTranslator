@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Golos_text";
+    src:url("fonts/GolosText.ttf");
+}
+#App {
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 143px 1fr;
+
+    row-gap: 25px;
+    column-gap: 50px;
+    font-family: "Golos_text";
+
+}
+
+#program {
+    justify-self: end;
+}
+#program, #leksem {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+}
+
+
+
+button {
+    font-size: 20px;
+    border-radius: 20px;
+    width: 150px;
+    border: 0;
+    color: white;
+    background: black;
+    font-family: "Golos_text";
+}
+
+button:hover {
+    background: #e3e333;
+    color: black;
+}
+
+#manipulators {
+    z-index: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: center;
+    height: min-content;
+
+    position: relative;
+    bottom: 130px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
