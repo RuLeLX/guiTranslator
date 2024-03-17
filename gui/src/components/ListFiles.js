@@ -26,14 +26,6 @@ export default function ListFiles(props) {
             triangle.style.transform = "rotate(0deg)";
         }
 
-        var properties = showfiles;
-        for (let i=0; i < properties.length; i++) {
-            if (flag) properties[i].opacity = "1";
-            else properties[i].opacity = "0";
-        }
-
-        //console.log(properties[0].opacity);
-        Show(properties);
         flag = !flag;
     }
 
