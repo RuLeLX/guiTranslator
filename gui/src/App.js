@@ -15,9 +15,7 @@ function App() {
 
 
     const Translating = ()=> {
-        var program = getProgram();
 
-        alert(program);
 
     }
 

@@ -1,20 +1,39 @@
-import FileIcon from '../images/FileIcon.png';
 import triangle from '../images/triangle.png'
 import '../styles/ListFiles.css';
 import {useRef, useState} from "react";
+import ListProgram from "./ListFiles/Variants";
+
 export default function ListFiles(props) {
 
+    const [showfiles, Show] = useState([
+        {transition: "0.2s", opacity: "0"},
+        {transition: "0.4s", opacity: "0"},
+        {transition: "0.6s", opacity: "0"},
+    ]);
+
     const triangle_in_head = useRef();
-    const list_program = useRef();
 
     var flag = true;
+
     const showList = () => {
+        var triangle = triangle_in_head.current;
+
         if (flag){
-            triangle_in_head.current.style.transform = "rotate(90deg)";
+            triangle.style.transform = "rotate(90deg)";
+
         }
         else {
-            triangle_in_head.current.style.transform = "rotate(0deg)";
+            triangle.style.transform = "rotate(0deg)";
         }
+
+        var properties = showfiles;
+        for (let i=0; i < properties.length; i++) {
+            if (flag) properties[i].opacity = "1";
+            else properties[i].opacity = "0";
+        }
+
+        //console.log(properties[0].opacity);
+        Show(properties);
         flag = !flag;
     }
 
@@ -23,12 +42,7 @@ export default function ListFiles(props) {
         <div id={"head_list_program"}  onClick={showList}> <img src={triangle} ref={triangle_in_head}></img>
             <label>Выберите программу для трансляции</label>
         </div>
-        <ul id={"list_program"} ref={list_program}>
-            <li><img src={FileIcon}/>Program.cs</li>
-            <li><img src={FileIcon}/>main.cs</li>
-            <li><img src={FileIcon}/>example.cs</li>
-        </ul>
-
+        <ListProgram data={showfiles}/>
 
     </div>
 }
