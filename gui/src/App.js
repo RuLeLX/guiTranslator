@@ -13,7 +13,6 @@ function App() {
         changeSpeed(value);
     }
 
-
     const Translating = ()=> {
 
 
@@ -26,7 +25,8 @@ function App() {
         <ListFiles/>
 
           <div id={"manipulators"}>
-            <button id={"run_translator"} onClick={Translating}>Запуск</button>
+              <button id={"stop_translator"}>Стоп</button>
+              <button id={"run_translator"} onClick={Translating}>Запуск</button>
               <label><input type={"range"} ref={view_speed} min={"1"} max={"10"}
                             defaultValue={"1"} onChange={MoveScroll}></input> {speed}x</label>
           </div>

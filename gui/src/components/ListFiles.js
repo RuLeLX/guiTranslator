@@ -17,11 +17,21 @@ export default function ListFiles() {
     const showList = () => {
         var triangle = triangle_in_head.current;
         triangle.style.transform = "rotate(90deg)";
+
         Show([
-            {transition: "0.4s", opacity: "1"},
-            {transition: "0.8s", opacity: "1"},
-            {transition: "1.2s", opacity: "1"},
+            {transition: "0.4s", opacity: "0", display: "flex"},
+            {transition: "0.8s", opacity: "0", display: "flex"},
+            {transition: "1.2s", opacity: "0", display: "flex"},
         ]);
+
+        setTimeout(()=>
+            Show([
+                {transition: "0.4s", opacity: "1"},
+                {transition: "0.8s", opacity: "1"},
+                {transition: "1.2s", opacity: "1"},
+            ], 1000)
+        );
+
     }
 
     return <div className={"ListFiles"}>
@@ -36,9 +46,12 @@ export default function ListFiles() {
                     {transition: "0.8s", opacity: "0"},
                     {transition: "0.4s", opacity: "0"},
                 ]);
+                setTimeout(()=>Show([
+                    {transition: "1.2s", opacity: "0", display: "none"},
+                    {transition: "0.8s", opacity: "0", display: "none"},
+                    {transition: "0.4s", opacity: "0", display: "none"},
+                ]), 1000);
             }}><img src={FileIcon}/>Program.cs</div>)}
-
-
 
     </div>
 }

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Golos_text";
+    src:url("fonts/GolosText.ttf");
+}
+
+p {
+    font-family: "Golos_text";
+    font-size: 40px;
+}
